@@ -96,6 +96,18 @@ const SignIn = () => {
               <FaGoogle className="text-[20px]" />
               Sign in with Google
             </Button>
+
+            <Button
+              className="w-full flex gap-2 "
+              variant="outline"
+              onClick={async () => {
+                await signIn("discord");
+              }}
+            >
+              <FaGoogle className="text-[20px]" />
+              Sign in with Discord
+            </Button>
+
             <Button
               className="w-full flex gap-2"
               variant="outline"

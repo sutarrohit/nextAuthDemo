@@ -2,6 +2,7 @@ import { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
+import DiscordProvider from "next-auth/providers/discord";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { signIn } from "next-auth/react";
 
@@ -37,6 +38,10 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_ID as string,
       clientSecret: process.env.NEXT_PUBLIC_GOOGLE_SECRET as string,
+    }),
+    DiscordProvider({
+      clientId: process.env.DISCORD_APPLICATION_ID as string,
+      clientSecret: process.env.DISCORD_PUBLIC_KEY as string,
     }),
   ],
   // Write Custom callback functions
